@@ -1,6 +1,6 @@
 #!/bin/bash
 a=10
 b=100
-echo printing the value of a ${a}
+echo -e "\e[32m printing the value of a ${a}\e[0m"
 echo $a
 echo $b
