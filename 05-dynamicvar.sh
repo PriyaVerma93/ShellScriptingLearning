@@ -1,4 +1,3 @@
 #!/bin/bash
-
-DATE = "01DEC2023"
-echo "Good Morning, Today's date is $DATE"
+date = "01DEC2023"
+echo "Today date is $date"
