@@ -1,5 +1,5 @@
 #!/bin/bash
-DATE=$(date + %F)
+DATE=$(date +%F)
 echo "Today date is $DATE"
 
 No_Of_Sessions=$(who|wc -l)
