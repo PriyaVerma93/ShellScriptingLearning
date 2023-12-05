@@ -3,4 +3,4 @@ DATE=$(date +%F)
 echo "Today date is $DATE"
 
 No_Of_Sessions=$(who|wc -l)
-echo "No of users login: $No_Of_Sessions"
+echo -e  "\e[32m No of users login: $No_Of_Sessions\e[0m"
