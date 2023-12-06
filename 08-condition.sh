@@ -1,7 +1,7 @@
 #!/bin/bash
 #case example
 
-$ACTION=$1
+ACTION=$1
 case $ACTION in 
    start)
        echo -e "\e[32m starting shipping service \e[0m"
