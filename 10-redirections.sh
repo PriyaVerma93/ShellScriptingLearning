@@ -21,7 +21,4 @@ case $ACTION in
      *)
      echo -e "\e[32m valid options are start stop or Restart\e[0m]"
 
-
-
-
 esac
