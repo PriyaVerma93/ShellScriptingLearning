@@ -8,4 +8,4 @@ echo "my nmae is priya"
 a=100
 b=200
 COMMENT
-echo $b
+echo " value of b is $b"
