@@ -2,6 +2,7 @@
 
 #This is single line comment
 
+#Multi line comment
 <<COMMENT
 echo "hai"
 echo "my nmae is priya"
