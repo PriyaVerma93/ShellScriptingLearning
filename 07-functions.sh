@@ -7,5 +7,5 @@ b56() {
 stat() {
     echo "No of session opened $(who|wc -l)"
     echo "hai"
-    echo "Todays date is $(date +%F)
+    echo "Todays date is $(date +%F)"
 }
