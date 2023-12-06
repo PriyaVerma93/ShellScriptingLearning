@@ -2,6 +2,6 @@
 
 #if condition
 
-if [$ACTION = Start]; then
+if [ $ACTION = Start ] ; then
 echo "start shipping service"
 fi
