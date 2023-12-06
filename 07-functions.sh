@@ -7,7 +7,12 @@ b56() {
 
 b56 
 
+
+
+
 stat() {
     echo "No of session opened $(who|wc -l)"
     echo "hai"
 }
+
+stat
