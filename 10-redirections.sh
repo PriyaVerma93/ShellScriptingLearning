@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #two types of redirectors
-1)input redirection (<)
-2)output redirection(>)
+#1)input redirection (<)
+#2)output redirection(>)
 
 $ACTION=$1
 case $ACTION in 
