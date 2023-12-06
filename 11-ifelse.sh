@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #if condition
+
+echo "demo on if conditions"
 ACTION= $1
 
 if [ "$ACTION" == "start" ] ; then
