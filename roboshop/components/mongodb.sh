@@ -39,11 +39,11 @@ stat $?
 
 echo -n "Downloading ${component} Schema"
 curl -s -L -o /tmp/mongodb.zip $schema
-stat$?
+stat $?
 
 echo -n "Extracting ${component} : "
 unzip -o /tmp/mongodb.zip   &>> $LOGFILE
-stat$?
+stat $?
 
 echo -n  "Injecting schema:" 
 cd /tmp/mongodb-main
