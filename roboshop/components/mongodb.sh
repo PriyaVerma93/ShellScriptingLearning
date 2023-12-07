@@ -51,7 +51,6 @@ mongo < catalogue.js
 ongo < users.js
 stat $?
 
-echo -n "Configuration is completed"
 
 
 
