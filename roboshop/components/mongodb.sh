@@ -1,7 +1,7 @@
 #!/bin/bash
 
-component=mongod
-LOGFILE="/tmp/$(component).log"
+component=mongo
+LOGFILE="/tmp/${component}.log"
 repo="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 schema="https://github.com/stans-robot-project/mongodb/archive/main.zip""
 uid=$(id -u)
@@ -50,6 +50,8 @@ cd /tmp/${component}-main
 mongo < catalogue.js
 ongo < users.js
 stat $?
+
+echo -n "Configuration is completed"
 
 
 
