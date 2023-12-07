@@ -1,6 +1,6 @@
 #!/bin/bash
 
-component=$1
+component=frontend
 LOGFILE="/tmp/$(component).log"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
@@ -21,27 +21,27 @@ echo -n "***Installing Nginx***"
 yum install nginx -y &>> $LOGFILE
 stat $?
 
-echo -n "Downloading the Component $1 :"
+echo -n "Downloading the ${component}:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
-echo -n "cleanup of $1 component"
+echo -n "cleanup of ${component}"
 cd /usr/share/nginx/html
 rm -rf * &>> /tmp/frontend.log
 stat $?
 
-echo -n "Extracting the $1"
+echo -n "Extracting the ${component}"
 unzip /tmp/frontend.zip   &>> $LOGFILE
 stat $?
 
-echo -n "configuring $1"
+echo -n "configuring ${component}"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
-echo -n "Restarting $1 component"
+echo -n "Restarting ${component}"
  systemctl enable nginx &>> $LOGFILE
  systemctl daemon-reload &>> $LOGFILE
  systemctl restart nginx &>> $LOGFILE
