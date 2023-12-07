@@ -11,7 +11,7 @@ if  [ $uid -ne 0 ] ; then
 fi 
 
 stat() { 
-if  [ $? -eq 0 ] ; then
+if  [ $1 -eq 0 ] ; then
    echo -e "\e[33mSuccess\e[0m"
 else
    echo -e "\e[33mFailuree[0m"
