@@ -1,6 +1,7 @@
 #!/bin/bash
 
 component=$1
+LOGFILE="/tmp/$(component).log"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
@@ -17,7 +18,7 @@ fi
 
 echo -e ****************"\e[32m confguring frontend \e[0m"******
 echo -n "***Installing Nginx***"
-yum install nginx -y &>> /tmp/frontend.log
+yum install nginx -y &>> $LOGFILE
 stat $?
 
 echo -n "Downloading the Component $1 :"
@@ -30,16 +31,15 @@ rm -rf * &>> /tmp/frontend.log
 stat $?
 
 echo -n "Extracting the $1 component"
-unzip /tmp/frontend.zip &>> /tmp/frontend.log
-mv frontend-main/* .
+unzip /tmp/frontend.zip &>> $LOGFILE
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 echo -n "Restarting $1 component"
- systemctl enable nginx &>> /tmp/frontend.log
- systemctl daemon-reload &>> /tmp/frontend.log
- systemctl restart nginx &>> /tmp/frontend.log
+ systemctl enable nginx &>> $LOGFILE
+ systemctl daemon-reload &>> $LOGFILE
+ systemctl restart nginx &>> $LOGFILE
 stat $?
 
