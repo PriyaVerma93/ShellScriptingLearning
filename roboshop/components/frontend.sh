@@ -32,6 +32,8 @@ stat $?
 
 echo -n "Extracting the $1 component"
 unzip /tmp/frontend.zip &>> $LOGFILE
+stat $?
+echo -n "configuring component"
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
