@@ -46,7 +46,7 @@ unzip -o /tmp/${component}.zip  &>> $LOGFILE
 stat$?
 
 echo -n "Injecting ${component} schema:"
-cd /tmp/mongodb--main
+cd /tmp/mongodb-main
 mongo < catalogue.js
 mongo < users.js
 stat $?
