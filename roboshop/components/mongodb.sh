@@ -22,11 +22,14 @@ echo -n "Configuring Repo:"
 curl -s -o /etc/yum.repos.d/mongodb.repo $repo
 stat $?
 
-echo -n "Restarting ${component}"
- systemctl enable nginx &>> $LOGFILE
- systemctl daemon-reload &>> $LOGFILE
- systemctl restart nginx &>> $LOGFILE
-stat $?
+echo -n "Installing service ${component}"
+yum install -y mongodb-org &>>LOGFILE
+
+#echo -n "Restarting ${component}"
+ #systemctl enable nginx &>> $LOGFILE
+ #systemctl daemon-reload &>> $LOGFILE
+ #systemctl restart nginx &>> $LOGFILE
+#stat $?
 
 
 
