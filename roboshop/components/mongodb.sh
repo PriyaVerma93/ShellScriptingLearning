@@ -48,8 +48,8 @@ stat $?
 
 echo -n  "Injecting schema:" 
 cd /tmp/mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js &>> $LOGFILE
+mongo < users.js    &>> $LOGFILE
 stat $?
 
 
