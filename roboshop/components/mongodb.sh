@@ -3,6 +3,7 @@
 component=mongodb
 LOGFILE="/tmp/$(component).log"
 repo="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+schema="https://github.com/stans-robot-project/mongodb/archive/main.zip""
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
@@ -35,6 +36,23 @@ systemctl enable mongod &>> $LOGFILE
 systemctl daemon-reload &>> $LOGFILE
 systemctl restart mongod &>> $LOGFILE
 stat $?
+
+echo -n "Downloading $(component) Schema"
+curl -s -L -o /tmp/mongodb.zip $schema
+stat$?
+
+echo -n "Extracting ${component} : "
+unzip -o ${component}.zip  &>> $LOGFILE
+stat$?
+
+echo -n "Injecting ${component} schema :"
+cd /tmp/${component}-main
+mongo < catalogue.js
+ongo < users.js
+stat $?
+
+
+
 
 
 
