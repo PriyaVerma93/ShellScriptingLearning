@@ -22,3 +22,31 @@ if  [ $? = 0 ] ; then
 else
    echo -e "\e[35m Downloading Failure [0m"
 fi
+
+echo -n "cleanup of $1 component"
+cd /usr/share/nginx/html
+rm -rf * &>> /tmp/frontend.log
+if  [ $? = 0 ] ; then
+   echo -e "\e[34mSuccess\e[0m"
+else
+   echo -e "\e[35mFailuree[0m"
+fi
+
+echo -n "Extracting the $1 component"
+unzip /tmp/frontend.zip
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+
+echo -n "Restarting $1 component"
+ systemctl enable nginx &>> /tmp/frontend.log
+ systemctl daemon-reload &>> /tmp/frontend.log
+ systemctl restart nginx &>> /tmp/frontend.log
+ if  [ $? = 0 ] ; then
+   echo -e "\e[34mSuccess\e[0m"
+else
+   echo -e "\e[35mFailuree[0m"
+fi
+
+
