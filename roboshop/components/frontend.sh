@@ -33,7 +33,7 @@ else
 fi
 
 echo -n "Extracting the $1 component"
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip &>> /tmp/frontend.log
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
