@@ -20,5 +20,13 @@ fi
 echo -e ****************"\e[34m confguring ${component} \e[0m"******
 echo -n "Configuring Repo:"
 curl -s -o /etc/yum.repos.d/mongodb.repo $repo
+stat $?
+
+echo -n "Restarting ${component}"
+ systemctl enable nginx &>> $LOGFILE
+ systemctl daemon-reload &>> $LOGFILE
+ systemctl restart nginx &>> $LOGFILE
+stat $?
+
 
 
