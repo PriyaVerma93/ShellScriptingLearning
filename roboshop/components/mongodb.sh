@@ -11,13 +11,13 @@ fi
 
 stat() { 
 if  [ $? -eq 0 ] ; then
-   echo -e "\e[34mSuccess\e[0m"
+   echo -e "\e[33mSuccess\e[0m"
 else
-   echo -e "\e[35mFailuree[0m"
+   echo -e "\e[33mFailuree[0m"
 fi
 }
 
-echo -e ****************"\e[34m confguring ${component} \e[0m"******
+echo -e ****************"\e[32m confguring ${component} \e[0m"******
 echo -n "Configuring Repo:"
 curl -s -o /etc/yum.repos.d/mongodb.repo $repo
 stat $?
