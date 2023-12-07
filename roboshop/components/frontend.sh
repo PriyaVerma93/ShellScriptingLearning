@@ -30,10 +30,11 @@ cd /usr/share/nginx/html
 rm -rf * &>> /tmp/frontend.log
 stat $?
 
-echo -n "Extracting the $1 component"
+echo -n "Extracting the $1"
 unzip /tmp/frontend.zip &>> $LOGFILE
 stat $?
-echo -n "configuring component"
+
+echo -n "configuring $1"
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
