@@ -26,11 +26,15 @@ echo -n "Installing service ${component}"
 yum install -y mongodb-org &>>LOGFILE
 stat $?
 
-#echo -n "Restarting ${component}"
- #systemctl enable nginx &>> $LOGFILE
- #systemctl daemon-reload &>> $LOGFILE
- #systemctl restart nginx &>> $LOGFILE
-#stat $?
+echo -n "Enabling ${component} visibility"
+sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+stat $?
+
+echo -n "Restarting ${component}"
+systemctl enable nginx &>> $LOGFILE
+systemctl daemon-reload &>> $LOGFILE
+systemctl restart nginx &>> $LOGFILE
+stat $?
 
 
 
