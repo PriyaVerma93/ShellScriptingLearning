@@ -20,5 +20,5 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend
 if  [ $? = 0 ] ; then
    echo -e "\e[34m component downloaded successfully \e[0m"
 else
-   echo -e "\e[35m Downloading Failuree [0m"
+   echo -e "\e[35m Downloading Failure [0m"
 fi
