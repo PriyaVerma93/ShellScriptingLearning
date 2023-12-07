@@ -24,6 +24,7 @@ stat $?
 
 echo -n "Installing service ${component}"
 yum install -y mongodb-org &>>LOGFILE
+stat $?
 
 #echo -n "Restarting ${component}"
  #systemctl enable nginx &>> $LOGFILE
