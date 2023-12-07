@@ -1,6 +1,6 @@
 #!/bin/bash
 
-component=mongodb
+component=mongod
 LOGFILE="/tmp/$(component).log"
 repo="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 schema="https://github.com/stans-robot-project/mongodb/archive/main.zip""
@@ -37,7 +37,7 @@ systemctl daemon-reload &>> $LOGFILE
 systemctl restart mongod &>> $LOGFILE
 stat $?
 
-echo -n "Downloading $(component) Schema"
+echo -n "Downloading ${component} Schema"
 curl -s -L -o /tmp/mongodb.zip $schema
 stat$?
 
