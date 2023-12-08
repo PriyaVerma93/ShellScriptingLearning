@@ -2,7 +2,7 @@
 
 component=catalogue
 LOGFILE="/tmp/${component}.log"
-APPUSER="Roboshop"
+APPUSER="roboshop"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
