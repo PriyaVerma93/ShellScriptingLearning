@@ -44,5 +44,18 @@ cd /home/roboshop
 unzip -o /tmp/catalogue.zip  &>>LOGFILE 
 stat $?
 
+echo -n "configuring the ${component} permissions:"
+mv /home/${APPUSER}/${component}-main /home/${APPUSER}/${component}
+chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${component}
+chmod -R 770 /home/${APPUSER}/${component}
+stat $?
+
+
+
+
+
+
+
+
 
    
