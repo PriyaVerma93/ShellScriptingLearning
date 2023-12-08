@@ -2,6 +2,7 @@
 
 component=catalogue
 LOGFILE="/tmp/${component}.log"
+APPUSER="Roboshop"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
@@ -25,3 +26,14 @@ stat $?
 echo -n ****"Installing ${component} Service"******
 yum install nodejs -y  &>>LOGFILE 
 stat $?
+
+echo -n "Creating user account for ${component}
+if [$0 -ne 0] ; then
+   echo -e "\e[32mCreating $APPUSER\e[0m"
+   useradd $APPUSER
+   stat $?
+else
+   echo -e "\e[33mskipping\e[0m"
+fi
+
+   
