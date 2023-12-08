@@ -39,7 +39,7 @@ fi
 echo -n "downloading the ${component}:"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"  &>>LOGFILE 
 stat $?
-echo -n "extracting the ${conponent}"
+echo -n "extracting the ${component}"
 cd /home/roboshop
 unzip -o /tmp/catalogue.zip  &>>LOGFILE 
 
