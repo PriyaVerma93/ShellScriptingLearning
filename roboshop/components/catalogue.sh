@@ -19,7 +19,7 @@ fi
 echo -e "\e[32mconfguring ${component}\e[0m"
 
 echo -e "\e[33mConfiguring ${component}Repo\e[0m"
-curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -  &>>LOGFILE 
 stat $?
 
 echo -n ****"Installing ${component} Service"******
