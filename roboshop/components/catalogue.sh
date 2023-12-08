@@ -17,7 +17,7 @@ else
 fi
 }
 
-echo -e ****************"\e[32m confguring ${component} \e[0m"******
+echo -e "\e[32m confguring ${component} \e[0m"
 echo -n *****"Installing Repo"****
 yum install repo &>>LOGFILE
 stat $?
