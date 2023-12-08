@@ -51,7 +51,7 @@ chmod -R 770 /home/${APPUSER}/${component}
 stat $?
 
 echo -n "generating artifcats"
-cd $APPUSER
+cd /home/${APPUSER}/${component}
 npm install &>>LOGFILE
 stat $?
 
