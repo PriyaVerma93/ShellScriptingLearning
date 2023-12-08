@@ -29,7 +29,7 @@ stat $?
 
 id=$APPUSER   &>>LOGFILE 
 echo -e "\e[32mCreating $APPUSER\e[0m"
-if [ $0 -ne 0 ] ; then
+if [ $? -ne 0 ] ; then
    useradd $APPUSER
    stat $?
 else
