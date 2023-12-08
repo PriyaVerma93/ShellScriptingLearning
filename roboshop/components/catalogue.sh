@@ -60,6 +60,9 @@ cd /home/${APPUSER}/${component}
 sed -i -e 's/MONGO_DNSNAME/mongod.roboshop.internal/' systemd.service
 mv /home/${APPUSER}/${component}/systemd.service /etc/systemd/system/${component}.service
 stat $?
+
+
+
 echo -n "Restarting ${component}"
  systemctl enable ${component} &>> $LOGFILE
  systemctl daemon-reload &>> $LOGFILE
