@@ -18,7 +18,8 @@ fi
 }
 
 echo -e "\e[32mconfguring ${component}\e[0m"
-echo -n "Installing Repo"
+
+echo -e "\e[33mInstalling Repo\e[0m"
 yum install repo &>>LOGFILE
 stat $?
 
