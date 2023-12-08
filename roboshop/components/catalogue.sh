@@ -2,7 +2,7 @@
 
 component=catalogue
 LOGFILE="/tmp/${component}.log"
-repo="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y"
+repo="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
