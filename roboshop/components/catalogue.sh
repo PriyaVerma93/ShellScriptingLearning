@@ -2,7 +2,6 @@
 
 component=catalogue
 LOGFILE="/tmp/${component}.log"
-repo="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
 uid=$(id -u)
 if  [ $uid -ne 0 ] ; then
    echo -e "\e[32mThis script is expected to executed by root user\e[0m"
@@ -19,8 +18,8 @@ fi
 
 echo -e "\e[32mconfguring ${component}\e[0m"
 
-echo -e "\e[33mInstalling Repo\e[0m"
-yum install repo &>>LOGFILE
+echo -e "\e[33mConfiguring ${component}Repo\e[0m"
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
 stat $?
 
 echo -n ****"Installing ${component} Service"******
