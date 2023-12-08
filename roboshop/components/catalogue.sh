@@ -50,6 +50,12 @@ chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${component}
 chmod -R 770 /home/${APPUSER}/${component}
 stat $?
 
+echo -n "generating artifcats"
+cd $APPUSER
+npm install &>>LOGFILE
+stat $?
+
+
 
 
 
