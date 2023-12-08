@@ -28,8 +28,8 @@ yum install nodejs -y  &>>LOGFILE
 stat $?
 
 id=$APPUSER   &>>LOGFILE 
+echo -e "\e[32mCreating $APPUSER\e[0m"
 if [ $0 -ne 0 ] ; then
-   echo -e "\e[32mCreating $APPUSER\e[0m"
    useradd $APPUSER
    stat $?
 else
