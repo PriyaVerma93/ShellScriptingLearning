@@ -42,6 +42,7 @@ stat $?
 echo -n "extracting the ${component}"
 cd /home/roboshop
 unzip -o /tmp/catalogue.zip  &>>LOGFILE 
+stat $?
 
 
    
