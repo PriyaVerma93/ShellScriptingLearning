@@ -36,4 +36,9 @@ else
    echo -e "\e[33mskipping\e[0m"
 fi
 
+echo -n "downloading the ${component}:"
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"  &>>LOGFILE 
+stat $?
+
+
    
