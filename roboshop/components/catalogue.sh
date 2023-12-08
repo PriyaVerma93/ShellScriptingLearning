@@ -27,7 +27,7 @@ echo -n ****"Installing ${component} Service"******
 yum install nodejs -y  &>>LOGFILE 
 stat $?
 
-#id=$APPUSER 
+id=$APPUSER   &>>LOGFILE 
 if [ $0 -ne 0 ] ; then
    echo -e "\e[32mCreating $APPUSER\e[0m"
    useradd $APPUSER
